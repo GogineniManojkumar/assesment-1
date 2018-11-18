@@ -4,9 +4,9 @@
 3. Update the AccessKey, SecretKey, and Region in the terraform.tfvars 
 4. Run below commands in the terminal to provision the stack.(make sure current directory should be asesment-1)
 5. Create Workspace to not conflict with any existing environments.                                                           
-    #terraform workspace new assesment-1
+    #terraform workspace new assessment-1
 6. Run select command to use the newly created workspace.                                                                         
-    #terraform workspace select assesment-1
+    #terraform workspace select assessment-1
 7. Run init command to download the provider plugins
     #terraform init
 8. Get the list of resources plan which we create using terraform.                                                             
@@ -21,17 +21,17 @@ Once we ran the above command it starts creating the stack. It takes 20-25 minut
 TASKS:
 1. Creates Stack
 2. Install docker and docker-compose in Instance.
-3. It pulls the docker-compose deployment files from github(https://github.com/GogineniManojkumar/sentry-assesment.git)
+3. It pulls the docker-compose deployment files from github(https://github.com/GogineniManojkumar/sentry-assessment1.git)
 4. Then it provisions the Docker containers using the docker-compose.yml
-Docker Files path in Instance: /opt/sentry-assesment
+Docker Files path in Instance: /opt/sentry-assessment
 
 # Sentry Deployment.
 The first time we need to initialize the database migration manually. for that follow below steps 
 
 1. Go to the docker-compose file directory. 
-    #cd /opt/sentry-assesment
+    #cd /opt/sentry-assessment
 2. run following command to build the database. 
-  #docker-compose -p assesment-manoj run --rm web upgrade
+  #docker-compose -p assessment-manoj run --rm web upgrade
      Above command start new Docker container to Build the database. Use the interactive prompts to create a user account.
      the container will exit and remove after done with database build. (It takes 5-10 minutes time)
      

@@ -13,9 +13,9 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/
 sudo docker volume create --name=sentry-data && sudo docker volume create --name=sentry-postgres
 if [ $? = 0 ]; then
     cd /opt/
-    git clone https://github.com/GogineniManojkumar/sentry-assesment.git
-    cd sentry-assesment
-    /usr/local/bin/docker-compose -p assesment-manoj up -d
+    git clone https://github.com/GogineniManojkumar/sentry-assessment.git
+    cd sentry-assessment
+    /usr/local/bin/docker-compose -p assessment-manoj up -d
 else
     echo "Volume creation failed"
 fi
