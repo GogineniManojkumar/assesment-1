@@ -1,0 +1,21 @@
+#!/bin/bash -xe
+sudo yum -y update
+sudo yum install -y wget git
+sudo yum install -y docker 
+sudo service docker start
+sudo usermod -a -G docker ec2-user
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/
+
+
+####### Sentry Deployment #######
+sudo docker volume create --name=sentry-data && sudo docker volume create --name=sentry-postgres
+if [ $? = 0 ]; then
+    cd /opt/
+    git clone https://github.com/GogineniManojkumar/sentry-assesment.git
+    cd sentry-assesment
+    /usr/local/bin/docker-compose -p assesment-manoj up -d
+else
+    echo "Volume creation failed"
+fi
