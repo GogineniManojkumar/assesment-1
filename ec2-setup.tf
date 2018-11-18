@@ -9,7 +9,7 @@ resource "aws_instance" "sentry-app" {
   vpc_security_group_ids = [ "${aws_security_group.sentry-app-sg.id}" ]
   subnet_id = "${aws_subnet.subnet1.id}"
   user_data          = "${data.template_file.init_template.rendered}"
-  depends_on = [ "aws_security_group.sentry-app-sg" ,"data.template_file.init_template" ]
+  depends_on = [ "var.keypair", "aws_security_group.sentry-app-sg" ,"data.template_file.init_template" ]
   tags {
     Name = "sentrya-app"
     Env = "assesment"

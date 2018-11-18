@@ -16,5 +16,5 @@ variable "instancetype" {
 
 variable "keypair" {
     description = "ssh keypair"
-    default = "test"
+    default = ""
 }

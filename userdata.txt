@@ -13,9 +13,14 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/
 sudo docker volume create --name=sentry-data && sudo docker volume create --name=sentry-postgres
 if [ $? = 0 ]; then
     cd /opt/
-    git clone https://github.com/GogineniManojkumar/sentry-assessment.git
-    cd sentry-assessment
+    git clone https://github.com/GogineniManojkumar/sentry-assessment1.git
+    cd sentry-assessment1
     /usr/local/bin/docker-compose -p assessment-manoj up -d
+    echo "Building the database"
+    /usr/local/bin/docker-compose -p assessment-manoj run --rm web upgrade --noinput
+    echo "Creating the super user"
+    /usr/local/bin/docker-compose -p assessment-manoj run --rm web createuser --email admin@gmail.com --password admin@1234 --superuser
 else
     echo "Volume creation failed"
 fi
+

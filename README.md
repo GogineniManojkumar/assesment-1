@@ -27,4 +27,6 @@ Docker Files path in Instance: /opt/sentry-assessment1
 
 Once done with above steps you can access the sentry application with ALB url using logins created while building the database. 
   Logins: 
-  Username: admin@gmail.
+  Username: admin@gmail.com
+  Password: admin@1234
+
