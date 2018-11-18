@@ -1,7 +1,6 @@
 # AWS STACK DEPLOYMENT
 1. Create a user in AWS IAM with(Ec2,VPC,Route53)permissions to create the stack. 
-2. Create AccessKey and SecretKey on the created user above. 
-    Note: Create ec2 Key pair and update in variabes.tf file
+2. Create AccessKey and SecretKey on the created user above.                                                                         Note: Create ec2 Key pair and update in variabes.tf file
 3. Update the AccessKey, SecretKey, and Region in the terraform.tfvars 
 4. Run below commands in the terminal to provision the stack.(make sure current directory should be asesment-1)
 5. Create Workspace to not conflict with any existing environments.                                                           
